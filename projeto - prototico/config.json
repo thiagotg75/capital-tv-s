@@ -1,0 +1,26 @@
+[
+  {
+    "ipAddress": "172.16.14.165",
+    "title": "Sistemas"
+  },
+  {
+    "ipAddress": "172.16.14.147",
+    "title": "Faturamento"
+  },
+  {
+    "ipAddress": "172.16.14.244",
+    "title": "Faturamento II"
+  },
+  {
+    "ipAddress": "172.16.14.216",
+    "title": "Importação I"
+  },
+  {
+    "ipAddress": "172.16.14.252",
+    "title": "Importação II"
+  },
+  {
+    "ipAddress": "172.16.14.192",
+    "title": "Importação III"
+  }
+]

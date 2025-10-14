@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../../../Downloads/projeto-capital-tvs"
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "projeto - prototico"
+    }
+}

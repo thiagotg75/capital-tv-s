@@ -1,0 +1,238 @@
+/* ==============================
+   🎨 Tema Claro e Escuro
+============================== */
+
+:root {
+  --primary: #0038a8;
+  --secondary: #2a96de;
+  --accent: #1b1b1c;
+  --light-bg: #f7f8fa;
+  --dark-bg: #1c1f26;
+  --light-text: #1e1e1e;
+  --dark-text: #f1f1f1;
+  --shadow: rgba(0, 0, 0, 0.15);
+  --radius: 14px;
+  --transition: 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Dark Mode */
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+/* ==============================
+   🧱 Cabeçalho
+============================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+body.dark .header {
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-logo {
+  width: 240px;
+}
+
+/* ==============================
+   🔘 Switch de Contraste
+============================== */
+.ui-switch {
+  position: relative;
+  width: 52px;
+  height: 26px;
+}
+
+.ui-switch input {
+  display: none;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  background: var(--secondary);
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition);
+}
+
+.slider .circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  transition: var(--transition);
+}
+
+.ui-switch input:checked + .slider .circle {
+  left: 29px;
+  background: var(--primary);
+}
+
+/* ==============================
+   🧩 Cards
+============================== */
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card-section h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+/* Cada card */
+.card-1 {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+body.dark .card-1 {
+  background: rgba(30, 33, 40, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-1 img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ==============================
+   🧠 Botões
+============================== */
+.card-1 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 90%;
+  margin: 8px auto;
+  padding: 10px 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.card-1 button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.25);
+}
+
+.card-1 button svg {
+  fill: #fff;
+}
+
+.btn-add a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ==============================
+   ⚠️ Alerta de Reset
+============================== */
+.notifications-container {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 9999;
+}
+
+.error-alert {
+  background: #fff;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 14px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.error-prompt-heading {
+  color: #b91c1c;
+  font-weight: bold;
+}
+
+body.dark .error-alert {
+  background: #2a2a2a;
+  color: var(--dark-text);
+}
+
+/* ==============================
+   ⏱ Rodapé
+============================== */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #555;
+  padding-right: 25px;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+body.dark .footer {
+  color: #ccc;
+}
+
+/* ==============================
+   ✨ Animações
+============================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
