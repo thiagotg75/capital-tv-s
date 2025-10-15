@@ -103,15 +103,19 @@ function showCustomAlert(title) {
 }
 
 const btn = document.getElementById("contraste");
+const modoTexto = document.getElementById("modoTexto");
 
-btn.addEventListener("click", function() {
-  if (document.body.classList.contains("dark")) {
-    document.body.classList.remove("dark");
-    document.body.classList.add("light");
-  } 
-  else {
-    document.body.classList.remove("light");
-    document.body.classList.add("dark");
+btn.addEventListener("change", function () {
+  const body = document.body;
+
+  if (btn.checked) {
+    body.classList.remove("light");
+    body.classList.add("dark");
+    modoTexto.textContent = "Desativar modo escuro";
+  } else {
+    body.classList.remove("dark");
+    body.classList.add("light");
+    modoTexto.textContent = "Ativar modo escuro";
   }
 });
 async function enviarURL() {
@@ -121,7 +125,7 @@ async function enviarURL() {
       const formData = new FormData();
       formData.append("url", url);
 
-      const resposta = await fetch("http://172.16.14.165/feh.status.php", {
+      const resposta = await fetch("http://${ip}/feh.status.php", {
         method: "POST",
         body: formData
       });
@@ -144,6 +148,7 @@ function resetCountdown() {
     }
   }, 1000)
 }
+
 
  
 document.addEventListener("DOMContentLoaded", () => {

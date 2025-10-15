@@ -1,0 +1,60 @@
+body { 
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, rgba(246,248,249,1) 0%,rgba(229,235,238,1) 50%,rgba(215,222,227,1) 51%,rgba(245,247,249,1) 100%); 
+    padding: 20px; 
+    margin: 0;
+    min-height: 93vh;
+}
+textarea { 
+    width: 70%; 
+    height: 200px; 
+    border-radius: 8px; 
+    padding: 10px; 
+    font-size: 16px;
+    resize: vertical;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+.btnsave { 
+    margin-top: 10px; 
+    padding: 10px 20px; 
+    background: #0078d7; 
+    border: none; 
+    color: white; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btnremove { 
+    margin-top: 10px; 
+    padding: 10px 20px; 
+    background: #d9534f; 
+    border: none; 
+    color: white; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+}
+
+.btnsave:hover { 
+    background: #005bb5; 
+}
+
+.btnremove:hover { 
+    background: #c9302c; 
+}
+#msg { 
+    margin-top: 10px; 
+    font-weight: bold; 
+}
+.success { 
+    color: green;
+}
+.error { 
+    color: red; 
+}
